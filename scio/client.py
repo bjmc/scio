@@ -183,6 +183,7 @@ class Client(object):
         except AttributeError:
             response = None
         if response:
+            log.debug('Response xml: %s', response)
             try:
                 parsed = etree.fromstring(response)
                 body = parsed.find(SOAP_BODY)
